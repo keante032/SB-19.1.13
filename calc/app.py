@@ -8,30 +8,30 @@ app = Flask(__name__)
 def add():
     """Adds a and b and returns result as the body."""
 
-    a = requests.arg["a"]
-    b = requests.arg["b"]
-    return operations.add(a, b)
+    a = int(request.args["a"])
+    b = int(request.args["b"])
+    return str(operations.add(a, b))
 
 @app.route('/sub')
 def sub():
     """Subtracts b from a and returns result as the body."""
 
-    a = requests.arg["a"]
-    b = requests.arg["b"]
-    return operations.sub(a, b)
+    a = int(request.args["a"])
+    b = int(request.args["b"])
+    return str(operations.sub(a, b))
 
 @app.route('/mult')
 def mult():
     """Multiplies a and b and returns result as the body."""
 
-    a = requests.arg["a"]
-    b = requests.arg["b"]
-    return operations.mult(a, b)
+    a = int(request.args["a"])
+    b = int(request.args["b"])
+    return str(operations.mult(a, b))
 
 @app.route('/div')
 def div():
     """Divides a by b and returns result as the body."""
 
-    a = requests.arg["a"]
-    b = requests.arg["b"]
-    return operations.div(a, b)
+    a = int(request.args["a"])
+    b = int(request.args["b"])
+    return str(operations.div(a, b))
